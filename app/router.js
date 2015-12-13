@@ -10,6 +10,7 @@ Router.map(function() {
   this.authenticatedRoute('history');
   this.route('leaderboard');
   this.route('login');
+  this.route('registerstairs');
 });
 
 export default Router;

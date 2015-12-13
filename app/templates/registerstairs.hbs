@@ -1,0 +1,14 @@
+{{#model as |stairs|}}
+
+{{bootstrap-datepicker-inline
+  format="dd.mm.yy"
+  id="newDate"
+  todayHighlight=true
+  todayBtn=true
+  weekStart=1
+  autoclose=true
+  value= newDate
+  defaultDate='now'}}
+
+{{input type="text" id="new-todo" placeholder="What needs to be done?" value=newDate}}
+<button {{action 'createTodo'}}>Contract</button>

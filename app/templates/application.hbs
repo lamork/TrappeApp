@@ -2,12 +2,13 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active">{{#link-to 'users'}}Registrer{{/link-to}}</li>
+        <li class="active">{{#link-to 'users'}}Brukere{{/link-to}}</li>
+        <li>{{#link-to 'registerstairs'}}Registrer{{/link-to}}</li>
         <li>{{#link-to 'history'}}Historikk{{/link-to}}</li>
         <li>{{#link-to 'leaderboard'}}Leaderboard{{/link-to}}</li>
 
         {{#if session.isAuthenticated}}
-          <button {{action "signOut"}}>Sign out</button>        
+          <button {{action "signOut"}}>Sign out</button>
         {{/if}}
 
       </ul>
