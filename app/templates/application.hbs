@@ -1,7 +1,7 @@
 <h2 id="title">Welcome to Ember</h2>
 
 {{#if session.isAuthenticated}}
-  Logged in as {{session.currentUser.displayName}}
+  Logged in as {{session}}
   <button {{action "signOut"}}>Sign out</button>
   {{outlet}}
 {{else}}
