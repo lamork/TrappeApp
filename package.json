@@ -37,6 +37,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "emberfire": "git://github.com/firebase/emberfire.git#bb375ab80c9bc0a1ef2eb3eed7626c967490038c",
-    "firebase": "2.3.2"
+    "firebase": "2.3.2",
+    "torii": "0.6.1"
   }
 }
