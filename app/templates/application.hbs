@@ -7,9 +7,7 @@
         <li>{{#link-to 'leaderboard'}}Leaderboard{{/link-to}}</li>
 
         {{#if session.isAuthenticated}}
-          <button {{action "signOut"}}>Sign out</button>
-        {{else}}
-          <button {{action "signIn" "google"}}>Sign in with Google</button>
+          <button {{action "signOut"}}>Sign out</button>        
         {{/if}}
 
       </ul>

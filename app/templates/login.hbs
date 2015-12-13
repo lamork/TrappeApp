@@ -1,0 +1,6 @@
+Her logger man inn
+
+{{#if session.isAuthenticated}}  
+{{else}}
+  <button {{action "signIn" "google"}}>Sign in with Google</button>
+{{/if}}
