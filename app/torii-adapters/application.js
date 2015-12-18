@@ -62,34 +62,18 @@ export default Ember.Object.extend({
   _findOrCreateUser(authData) {
     let store = this.get('store');
 
-    return store.query('user', {
-      equalTo: 'leif.asmund.mork@gmail.com'
-    })
+    return store.find('user',authData.uid)
     .catch(() => {
       let newUser = store.createRecord('user', this.extractUserProperties(authData));
       newUser.save();
-
-      let newProvider = store.createRecord('provider', this.extractProviderProperties(authData,newUser));
-      return newProvider.save();
+      return newUser;
     });
-  },
-
-  extractProviderProperties(authData, user) {
-    var providerName = authData.provider;
-
-    var provider = {
-      user: user,
-      name: providerName,
-      created: new Date(),
-      lastLogin: new Date()
-    };
-
-    return provider;
   },
 
   extractUserProperties(authData) {
     var name = 'Unknown';
     var userData = authData[authData.provider];
+    var providerName = authData.provider;
 
     if (userData.displayName) {
       name = userData.displayName;
@@ -97,11 +81,12 @@ export default Ember.Object.extend({
       name = userData.username;
     }
 
-    var email = 'leif.asmund.mork@gmail.com';
-
     var user = {
+      id: authData.uid,
       name: name,
-      email: email
+      provider: providerName,
+      created: new Date(),
+      lastLogin: new Date()
     };
 
     return user;

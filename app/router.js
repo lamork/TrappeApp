@@ -11,6 +11,9 @@ Router.map(function() {
   this.route('leaderboard');
   this.route('login');
   this.route('registerstairs');
+  this.route('registerwalkedstaircase');
+  this.route('viewWalkedstaircases');
+  this.route('viewwalkedstaircases');
 });
 
 export default Router;

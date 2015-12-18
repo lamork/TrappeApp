@@ -1,9 +1,11 @@
 {{#each model as |user|}}
+  <li>{{user.id}}</li>
   <li>{{user.name}}</li>
-  <li>{{user.email}}</li>
-  {{#each user.providers as |provider|}}
-    <li>{{provider.name}}</li>
-    <li>{{provider.created}}</li>
-    <li>{{provider.lastLogin}}</li>
-  {{/each}}
+  <li>{{user.provider}}</li>
+  <li>{{user.created}}</li>
+  <li>{{user.lastLogin}}</li>
+  {{#each user.allWalkedStaircases as |walkedstaircase|}}
+      <li>{{walkedstaircase.dateWalked}}</li>
+      <li>{{walkedstaircase.created}}</li>
+    {{/each}}
 {{/each}}

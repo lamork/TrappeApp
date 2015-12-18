@@ -3,7 +3,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active">{{#link-to 'users'}}Brukere{{/link-to}}</li>
-        <li>{{#link-to 'registerstairs'}}Registrer{{/link-to}}</li>
+        <li>{{#link-to 'registerwalkedstaircase'}}Registrer{{/link-to}}</li>
         <li>{{#link-to 'history'}}Historikk{{/link-to}}</li>
         <li>{{#link-to 'leaderboard'}}Leaderboard{{/link-to}}</li>
 
@@ -16,7 +16,16 @@
   </div><!-- /.container-fluid -->
 </nav>
 {{#if session.isAuthenticated}}
-  Logged in as {{session}}
+<ul class="nav navbar-nav">
+  <li>Logged in as {{session.currentUser.name}}</li>
+  <li>Total stairs walked {{session.currentUser.allWalkedStaircases.length}}</li>
+  {{#each session.currentUser.allWalkedStaircases as |walkedstaircase|}}
+  <li>{{walkedstaircase.dateWalked}}</li>
+  {{/each}}
+  </ul>
+
+
+
 {{/if}}
 <br><br>
 

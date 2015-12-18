@@ -8,8 +8,8 @@ export default Ember.Controller.extend({
         var title = this.get('newDate');
         var user = this.get('session.currentUser');
         // Create the new Todo model
-        var todo = this.store.createRecord('stairs', {
-          date: title,
+        var todo = this.store.createRecord('walkedstaircase', {
+          dateWalked: title,
           created: new Date(),
           user: user
         });
@@ -18,7 +18,15 @@ export default Ember.Controller.extend({
         this.set('newDate', '');
 
         // Save the new model
-        todo.save();
+        // todo.save();
+
+        user.get('allWalkedStaircases').then(function(chapters) {
+          chapters.addObject(todo);
+          user.save().then(function() {
+            todo.save();
+          });
+        });
+
       }
     }
 
