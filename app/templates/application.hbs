@@ -4,7 +4,7 @@
       <ul class="nav navbar-nav">
         <li class="active">{{#link-to 'users'}}Brukere{{/link-to}}</li>
         <li>{{#link-to 'registerwalkedstaircase'}}Registrer{{/link-to}}</li>
-        <li>{{#link-to 'history'}}Historikk{{/link-to}}</li>
+        <li>{{#link-to 'viewwalkedstaircases'}}Historikk{{/link-to}}</li>
         <li>{{#link-to 'leaderboard'}}Leaderboard{{/link-to}}</li>
 
         {{#if session.isAuthenticated}}
@@ -22,9 +22,7 @@
   {{#each session.currentUser.allWalkedStaircases as |walkedstaircase|}}
   <li>{{walkedstaircase.dateWalked}}</li>
   {{/each}}
-  </ul>
-
-
+</ul>
 
 {{/if}}
 <br><br>
