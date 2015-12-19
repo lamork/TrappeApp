@@ -6,14 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('users');
-  this.authenticatedRoute('history');
-  this.route('leaderboard');
+  this.authenticatedRoute('users');
+  this.authenticatedRoute('leaderboard');
   this.route('login');
-  this.route('registerstairs');
-  this.route('registerwalkedstaircase');
-  this.route('viewWalkedstaircases');
-  this.route('viewwalkedstaircases');
+  this.authenticatedRoute('registerwalkedstaircase');
+  this.authenticatedRoute('viewwalkedstaircases');
 });
 
 export default Router;

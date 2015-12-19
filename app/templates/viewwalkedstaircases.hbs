@@ -11,9 +11,10 @@
     {{/each}}
 {{/each}} -->
 
+{{session.currentUser.number_of_people}}
 Total stairs walked {{session.currentUser.allWalkedStaircases.length}}
 <ul class="nav navbar-nav">
   {{#each session.currentUser.sortedModules as |sort|}}
-    <li>{{sort.dateWalked}}</li>
+    <li>{{sort.dateWalked}} <a href="#" {{ action "remove" sort }}>x</a> </li>
   {{/each}}
 </ul>

@@ -86,7 +86,6 @@ export default Ember.Object.extend({
       name: name,
       provider: providerName,
       created: new Date(),
-      lastLogin: new Date()
     };
 
     return user;
