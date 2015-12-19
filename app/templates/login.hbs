@@ -1,6 +1,7 @@
 Her logger man inn
 
-{{#if session.isAuthenticated}}  
+{{#if session.isAuthenticated}}
 {{else}}
   <button {{action "signIn" "google"}}>Sign in with Google</button>
+  <button {{action "signIn" "facebook"}}>Sign in with Facebook</button>
 {{/if}}
