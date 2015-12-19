@@ -8,7 +8,7 @@ export default DS.Model.extend({
   allWalkedStaircases: DS.hasMany('walkedstaircase'),
 
   sortedModules: Ember.computed.sort('allWalkedStaircases.@each.dateWalked', function (mod1, mod2) {
-      return mod1.get('dateWalked') - mod2.get('dateWalked') 
+      return mod2.get('dateWalked') - mod1.get('dateWalked');
   }),
 
 });
