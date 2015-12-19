@@ -1,1 +1,15 @@
-Her kommer leaderboard
+<h1>Cars grouped by color</h1>
+
+{{#each carsByColor as |group|}}
+  <h3>Cars that have {{group.property}} {{group.value}} {{group.items.length}}</h3>
+  <ul>
+    {{#each group.items as |walkedstaircase|}}
+      <li>{{walkedstaircase.dateWalked}}</li>
+    {{/each}}
+  </ul>
+{{/each}}
+
+{{#each model as |walkedstaircase|}}
+  <li>{{walkedstaircase.user.name}} - {{walkedstaircase.dateWalked}}</li>
+
+{{/each}}

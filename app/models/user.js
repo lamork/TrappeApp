@@ -11,6 +11,7 @@ export default DS.Model.extend({
   }),
   number_of_people: function(){
    return this.get('sortedModules.firstObject');
- }.property('sortedModules')
+ }.property('sortedModules'),
+ 
 
 });
