@@ -1,7 +1,9 @@
-<h1>Cars grouped by color</h1>
+<li>{{#link-to 'leaderboard' (query-params searchtype="currentWeek")}}Leaderboard - Current week{{/link-to}}</li>
+<li>{{#link-to 'leaderboard' (query-params searchtype="currentMonth")}}Leaderboard - Current month{{/link-to}}</li>
+<li>{{#link-to 'leaderboard' (query-params searchtype="currentYear")}}Leaderboard - Current year{{/link-to}}</li>
 
-{{#each carsByColor as |group|}}
-  <h3>Cars that have {{group.property}} {{group.value}} {{group.items.length}}</h3>
+{{#each usersByDaysWalked as |group|}}
+  <h3>Users grouped by {{group.property}} {{group.value}} {{group.items.length}}</h3>
   <ul>
     {{#each group.items as |walkedstaircase|}}
       <li>{{walkedstaircase.dateWalked}}</li>

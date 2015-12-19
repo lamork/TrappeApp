@@ -8,9 +8,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.authenticatedRoute('users');
   this.authenticatedRoute('leaderboard');
-  this.route('login');
   this.authenticatedRoute('registerwalkedstaircase');
   this.authenticatedRoute('viewwalkedstaircases');
+  this.route('login');
 });
 
 export default Router;

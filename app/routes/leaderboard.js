@@ -8,19 +8,17 @@ export default Ember.Route.extend({
   },
   model: function(params) {
     var startAndEndDate = getStartAndEndDate(params.searchtype);
+
     if(startAndEndDate.startDate === null || startAndEndDate.endDate === null)
     {
       return this.store.findAll('walkedstaircase');
     }
-    console.log(startAndEndDate.startDate.toISOString());
-    console.log(startAndEndDate.endDate.toISOString());
 
     return this.store.query('walkedstaircase', {
       orderBy: 'dateWalked',
       startAt:  startAndEndDate.startDate.toISOString(),
       endAt:  startAndEndDate.endDate.toISOString()
     });
-
   }});
 
   function getStartAndEndDate(searchtype)
@@ -37,8 +35,8 @@ export default Ember.Route.extend({
 
     if (searchtype === 'currentWeek')
     {
-      var first = date.getDate() - date.getDay() + 1; // First day is the day of the month - the day of the week
-      var last = first + 6; // last day is the first day + 6
+      var first = date.getDate() - date.getDay() + 1;
+      var last = first + 6;
 
       var firstDay = new Date(date.setDate(first));
       firstDay.setHours(0);

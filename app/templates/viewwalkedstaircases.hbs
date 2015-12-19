@@ -1,20 +1,7 @@
-<!-- {{#each model as |walkedstaircase|}}
-  <li>{{walkedstaircase.created}}</li>
-  <li>{{walkedstaircase.dateWalked}}</li>
-  <li>{{walkedstaircase.user.id}}</li>
-  <li>{{walkedstaircase.user.name}}</li>
-{{/each}} -->
-
-<!-- {{#each model as |user|}}
-    {{#each model.allWalkedStaircases as |walkedstaircase|}}
-      <li>{{walkedstaircase.dateWalked}}</li>
-    {{/each}}
-{{/each}} -->
-
 {{session.currentUser.number_of_people}}
-Total stairs walked {{session.currentUser.allWalkedStaircases.length}}
+Total stairs walked {{session.currentUser.allWalkedStaircasesSortedByDateWalked.length}}
 <ul class="nav navbar-nav">
-  {{#each session.currentUser.sortedModules as |sort|}}
-    <li>{{sort.dateWalked}} <a href="#" {{ action "remove" sort }}>x</a> </li>
+  {{#each session.currentUser.allWalkedStaircasesSortedByDateWalked as |walkedstaircase|}}
+    <li>{{walkedstaircase.dateWalked}} <a href="#" {{ action "remove" sort }}>x</a> </li>
   {{/each}}
 </ul>

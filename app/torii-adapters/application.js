@@ -87,7 +87,7 @@ export default Ember.Object.extend({
       provider: providerName,
       created: new Date(),
     };
-
+    
     return user;
   }
 });

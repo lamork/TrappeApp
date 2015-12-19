@@ -9,12 +9,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
     firebase: 'https://trappeapp-test.firebaseio.com',
     torii: {
-      sessionServiceName: 'session',
-      providers: {
-        'google': {
-          scope: 'email'
-        }
-      }
+      sessionServiceName: 'session'      
     },
     EmberENV: {
       FEATURES: {
