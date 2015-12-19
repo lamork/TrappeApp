@@ -5,8 +5,9 @@
         <li class="active">{{#link-to 'users'}}Brukere{{/link-to}}</li>
         <li>{{#link-to 'registerwalkedstaircase'}}Registrer{{/link-to}}</li>
         <li>{{#link-to 'viewwalkedstaircases'}}Historikk{{/link-to}}</li>
-        <li>{{#link-to 'leaderboard'}}Leaderboard{{/link-to}}</li>
-
+        <li>{{#link-to 'leaderboard' (query-params searchtype="currentWeek")}}Leaderboard - Current week{{/link-to}}</li>
+        <li>{{#link-to 'leaderboard' (query-params searchtype="currentMonth")}}Leaderboard - Current month{{/link-to}}</li>
+        <li>{{#link-to 'leaderboard' (query-params searchtype="currentYear")}}Leaderboard - Current year{{/link-to}}</li>
         {{#if session.isAuthenticated}}
           <button {{action "signOut"}}>Sign out</button>
         {{/if}}
