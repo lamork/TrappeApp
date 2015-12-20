@@ -1,12 +1,37 @@
-<li>{{#link-to 'leaderboard' (query-params searchtype="currentWeek")}}Leaderboard - Current week{{/link-to}}</li>
-<li>{{#link-to 'leaderboard' (query-params searchtype="currentMonth")}}Leaderboard - Current month{{/link-to}}</li>
-<li>{{#link-to 'leaderboard' (query-params searchtype="currentYear")}}Leaderboard - Current year{{/link-to}}</li>
+{{#bs-dropdown}}
+  {{#bs-dropdown-button}}Dropdown <span class="caret" style="width:500px"></span>{{/bs-dropdown-button}}
+  {{#bs-dropdown-menu}}
+    <li>{{#link-to 'leaderboard' (query-params searchtype="currentWeek")}}Leaderboard - Current week{{/link-to}}</li>
+    <li>{{#link-to 'leaderboard' (query-params searchtype="currentMonth")}}Leaderboard - Current month{{/link-to}}</li>
+    <li>{{#link-to 'leaderboard' (query-params searchtype="currentYear")}}Leaderboard - Current year{{/link-to}}</li>
+  {{/bs-dropdown-menu}}
+{{/bs-dropdown}}
 
-{{#each usersByDaysWalked as |group|}}
-  <h3>Users grouped by {{group.property}} {{group.value}} {{group.total}}</h3>
-  <ul>
-    {{#each group.items as |walkedstaircase|}}
-      <li>{{walkedstaircase.dateWalked}}</li>
+
+
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Antall ganger</th>
+      <th>Navn</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each usersByDaysWalked as |group index|}}
+      {{#if (eq session.currentUser.name group.value)}}
+        <tr class="info">
+          <td>{{plus-one index}}</td>
+          <td>{{group.total}}</td>
+          <td>{{group.value}}</td>
+        </tr>
+      {{else}}
+        <tr>
+          <td>{{plus-one index}}</td>
+          <td>{{group.total}}</td>
+          <td>{{group.value}}</td>
+        </tr>
+      {{/if}}
     {{/each}}
-  </ul>
-{{/each}}
+  </tbody>
+</table>

@@ -6,10 +6,12 @@ module.exports = function(environment) {
     environment: 'development',
     baseURL: '/',
     locationType: 'auto',
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com" },
     firebase: 'https://trappeapp-test.firebaseio.com',
     torii: {
-      sessionServiceName: 'session'      
+      sessionServiceName: 'session'
     },
     EmberENV: {
       FEATURES: {
