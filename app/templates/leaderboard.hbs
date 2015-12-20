@@ -3,7 +3,7 @@
 <li>{{#link-to 'leaderboard' (query-params searchtype="currentYear")}}Leaderboard - Current year{{/link-to}}</li>
 
 {{#each usersByDaysWalked as |group|}}
-  <h3>Users grouped by {{group.property}} {{group.value}} {{group.items.length}}</h3>
+  <h3>Users grouped by {{group.property}} {{group.value}} {{group.total}}</h3>
   <ul>
     {{#each group.items as |walkedstaircase|}}
       <li>{{walkedstaircase.dateWalked}}</li>

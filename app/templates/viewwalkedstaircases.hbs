@@ -2,6 +2,6 @@
 Total stairs walked {{session.currentUser.allWalkedStaircasesSortedByDateWalked.length}}
 <ul class="nav navbar-nav">
   {{#each session.currentUser.allWalkedStaircasesSortedByDateWalked as |walkedstaircase|}}
-    <li>{{walkedstaircase.dateWalked}} <a href="#" {{ action "remove" sort }}>x</a> </li>
+    <li>{{walkedstaircase.dateWalked}} <a href="#" {{ action "remove" walkedstaircase }}>x</a> </li>
   {{/each}}
 </ul>
