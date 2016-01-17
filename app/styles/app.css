@@ -1,0 +1,38 @@
+.navbar {
+  background-color: #c40000;
+  border-color: #c40000;
+  padding-top: 7px;
+}
+.navbar-logo {
+  margin-left: 10px;
+}
+.navbar-header-title {
+  font-size: 12px;
+  vertical-align: middle;
+  color: whitesmoke;
+  margin-left: 10px;
+}
+.navbar-header-username {
+  font-size: 12px;
+  vertical-align: middle;
+  color: whitesmoke;
+}
+.navbar-header-linkSignOut {
+  font-size: 12px;
+  vertical-align: middle;
+  color: whitesmoke;
+}
+.mainContent {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.registerButton {
+  margin-left:25px;
+
+}
+
+.nav {
+  margin-left: 10px;
+}

@@ -1,6 +1,22 @@
-<nav class="navbar navbar-default">
+<div class="navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <div>
+        <img class="navbar-logo" src="assets/images/spv-logo.png" height="35" />
+      </div>
+      <div>
+        <span class="navbar-header-title">TrappeApp </span>
+        {{#if session.isAuthenticated}}
+          <span class="navbar-header-username">| {{session.currentUser.name}}</span>
+          <a class="navbar-header-linkSignOut" href="#" {{action "signOut"}}>[Logg ut]</a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Registrer <span class="sr-only">(current)</span></a></li>
@@ -8,45 +24,16 @@
         <li><a href="#">Toppliste</a></li>
         <li><a href="#">Logg ut</a></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    </div>
+  </div>
+</nav> -->
 
 <ul class="nav nav-pills">
-  <li role="presentation" ><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation" class="active"><a href="#">Messages</a></li>
-  <li><a href="#">Messages</a></li>
+  <li class="active">{{#link-to 'registerwalkedstaircase'}}Registrer{{/link-to}}</li>
+  <li>{{#link-to 'viewwalkedstaircases'}}Historikk{{/link-to}}</li>
+  <li>{{#link-to 'leaderboard'}}Leaderboard{{/link-to}}</li>
 </ul>
 
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
-
-
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active">{{#link-to 'users'}}Brukere{{/link-to}}</li>
-        <li>{{#link-to 'registerwalkedstaircase'}}Registrer{{/link-to}}</li>
-        <li>{{#link-to 'viewwalkedstaircases'}}Historikk{{/link-to}}</li>
-        <li>{{#link-to 'leaderboard'}}Leaderboard{{/link-to}}</li>
-
-        {{#if session.isAuthenticated}}
-          <button {{action "signOut"}}>Sign out</button>
-        {{/if}}
-
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-{{#if session.isAuthenticated}}
-  Logged in as {{session.currentUser.name}}
-{{/if}}
-<br><br>
-
-{{outlet}}
+<div class="mainContent">
+  {{outlet}}
+</div>
