@@ -1,7 +1,7 @@
-Her logger man inn
-
 {{#if session.isAuthenticated}}
+<h1 >Du er logget inn</h1>
 {{else}}
-  <button {{action "signIn" "google"}}>Sign in with Google</button>
-  <button {{action "signIn" "facebook"}}>Sign in with Facebook</button>
+  <h1 class="loginHeader">Logg inn</h1>
+  <input type="image" src="assets/images/google.png" {{action "signIn" "google"}} />
+  <input type="image" src="assets/images/facebook.png" {{action "signIn" "facebook"}} />
 {{/if}}

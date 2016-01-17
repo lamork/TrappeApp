@@ -30,9 +30,12 @@
 }
 .registerButton {
   margin-left:25px;
-
 }
 
 .nav {
   margin-left: 10px;
+}
+
+.loginHeader {
+  margin-left: 60px;
 }
