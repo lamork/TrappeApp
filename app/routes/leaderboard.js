@@ -38,13 +38,13 @@ export default Ember.Route.extend({
       var first = date.getDate() - date.getDay() + 1;
       var last = first + 6;
 
-      var firstDay = new Date(date.setDate(first));
+      firstDay = new Date(date.setDate(first));
       firstDay.setHours(0);
       firstDay.setMinutes(0);
       firstDay.setSeconds(0);
       firstDay.setMilliseconds(0);
 
-      var lastDay = new Date(date.setDate(last));
+      lastDay = new Date(date.setDate(last));
       lastDay.setHours(0);
       lastDay.setMinutes(0);
       lastDay.setSeconds(0);
@@ -53,8 +53,8 @@ export default Ember.Route.extend({
 
     if (searchtype === "currentYear")
     {
-      var firstDay = new Date(new Date().getFullYear(), 0, 1, 0, 0, 0, 0);
-      var lastDay = new Date(new Date().getFullYear(), 11, 31, 0, 0, 0, 0);
+      firstDay = new Date(new Date().getFullYear(), 0, 1, 0, 0, 0, 0);
+      lastDay = new Date(new Date().getFullYear(), 11, 31, 0, 0, 0, 0);
     }
     return {startDate:firstDay,endDate:lastDay};
   }

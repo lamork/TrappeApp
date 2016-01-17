@@ -1,7 +1,16 @@
-{{session.currentUser.number_of_people}}
-Total stairs walked {{session.currentUser.allWalkedStaircasesSortedByDateWalked.length}}
-<ul class="nav navbar-nav">
-  {{#each session.currentUser.allWalkedStaircasesSortedByDateWalked as |walkedstaircase|}}
-    <li>{{walkedstaircase.dateWalked}} <a href="#" {{ action "remove" walkedstaircase }}>x</a> </li>
-  {{/each}}
-</ul>
+<table class="table table-striped table-bordered table-condensed leaderboardTable">
+  <thead>
+    <tr>
+      <th>Dato</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each session.currentUser.allWalkedStaircasesSortedByDateWalked as |walkedstaircase|}}
+        <tr>
+          <td>{{moment-format walkedstaircase.dateWalked 'DD.MM.YYYY' allow-empty=true}}</td>
+          <td><a href="#" {{ action "remove" walkedstaircase }}>Slett</a></td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>

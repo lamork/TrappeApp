@@ -9,9 +9,4 @@ export default DS.Model.extend({
   allWalkedStaircasesSortedByDateWalked: Ember.computed.sort('allWalkedStaircases.@each.dateWalked', function (mod1, mod2) {
       return mod2.get('dateWalked') - mod1.get('dateWalked');
   }),
-  number_of_people: function(){
-   return this.get('allWalkedStaircasesSortedByDateWalked.firstObject');
- }.property('allWalkedStaircasesSortedByDateWalked'),
-
-
 });

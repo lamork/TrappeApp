@@ -8,7 +8,8 @@ module.exports = function(environment) {
     locationType: 'auto',
     contentSecurityPolicy: {
       'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com" },
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'script-src': "'self' 'unsafe-inline'", },
     firebase: 'https://trappeapp-test.firebaseio.com',
     torii: {
       sessionServiceName: 'session'
