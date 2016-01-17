@@ -15,23 +15,16 @@
   </div>
 </div>
 
-<!-- <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Registrer <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Historikk</a></li>
-        <li><a href="#">Toppliste</a></li>
-        <li><a href="#">Logg ut</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
-
 <ul class="nav nav-pills">
-  <li class="active">{{#link-to 'registerwalkedstaircase'}}Registrer{{/link-to}}</li>
-  <li>{{#link-to 'viewwalkedstaircases'}}Historikk{{/link-to}}</li>
-  <li>{{#link-to 'leaderboard'}}Leaderboard{{/link-to}}</li>
+  {{#link-to 'registerwalkedstaircase' tagName='li' href=false}}
+    {{#link-to 'registerwalkedstaircase'}}Registrer{{/link-to}}
+  {{/link-to}}
+  {{#link-to 'viewwalkedstaircases' tagName='li' href=false}}
+    {{#link-to 'viewwalkedstaircases'}}Historikk{{/link-to}}
+  {{/link-to}}
+  {{#link-to 'leaderboard' tagName='li' href=false}}
+    {{#link-to 'leaderboard'}}Toppliste{{/link-to}}
+  {{/link-to}}
 </ul>
 
 <div class="mainContent">
