@@ -1,10 +1,10 @@
 import Ember from "ember";
+import config from '../config/environment';
 
 var session = Ember.Object.extend({
   firebase: Ember.inject.service(),
   store: Ember.inject.service(),
-  ref: new Firebase("https://trappeapp-test.firebaseio.com"),
-
+  ref: new Firebase(config.firebase),
   addFirebaseCallback: function() {
     var session = this;
     this.get('ref').onAuth(function(authData) {
