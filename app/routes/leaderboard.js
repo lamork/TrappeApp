@@ -6,6 +6,11 @@ export default Ember.Route.extend({
       refreshModel: true
     }
   },
+  beforeModel() {
+    if (this.get('session').isAuthenticated === false) {
+      this.transitionTo('login');
+    }
+  },
   model: function(params) {
     var startAndEndDate = getStartAndEndDate(params.searchtype);
 

@@ -6,10 +6,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.authenticatedRoute('users');
-  this.authenticatedRoute('leaderboard');
-  this.authenticatedRoute('registerwalkedstaircase');
-  this.authenticatedRoute('viewwalkedstaircases');
+  this.route('users');
+  this.route('leaderboard');
+  this.route('registerwalkedstaircase', { path: '/' });
+  this.route('viewwalkedstaircases');
   this.route('login');
 });
 

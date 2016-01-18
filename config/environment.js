@@ -11,9 +11,6 @@ module.exports = function(environment) {
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'script-src': "'self' 'unsafe-inline'", },
     firebase: 'https://trappeapp-test.firebaseio.com',
-    torii: {
-      sessionServiceName: 'session'
-    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
