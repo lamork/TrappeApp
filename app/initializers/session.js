@@ -51,7 +51,7 @@ var session = Ember.Object.extend({
 
 export default {
   name: "Session",
-  initialize: function(container, app) {
+  initialize: function(app) {
     app.register("session:main", session);
     app.inject("controller", "session", "session:main");
     app.inject("route", "session", "session:main");

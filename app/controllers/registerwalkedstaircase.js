@@ -3,7 +3,7 @@ export default Ember.Controller.extend({
 
   actions: {
       registerNewWalkedStaircase: function() {
-        var walkedstaircaseModel = this.get('model')
+        var walkedstaircaseModel = this.get('model');
         var user = this.get('session.currentUser');
 
         var newWalkedstaircase = this.store.createRecord('walkedstaircase', {
@@ -16,6 +16,11 @@ export default Ember.Controller.extend({
 
         newWalkedstaircase.save().then(function() {
           user.save();
+          $("#registerStatus span").text("Trappen er registrert")
+            .show().parent().fadeIn()
+            .delay(2000).fadeOut('slow', function() {
+                $("#registerStatus span").text('');
+            });
         });
     }
 }});
