@@ -1,8 +1,0 @@
-{{#if session.isAuthenticated}}
-<h1 >Du er logget inn</h1>
-{{#link-to "registerwalkedstaircase"}}Trykk her for å registrere{{/link-to}}
-{{else}}
-  <h1 class="loginHeader">Logg inn</h1>
-  <input type="image" src="assets/images/google.png" {{action "signIn" "google"}} />
-  <input type="image" src="assets/images/facebook.png" {{action "signIn" "facebook"}} />
-{{/if}}

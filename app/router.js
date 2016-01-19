@@ -9,8 +9,7 @@ Router.map(function() {
   this.route('users');
   this.route('leaderboard');
   this.route('registerwalkedstaircase', { path: '/' });
-  this.route('viewwalkedstaircases');
-  this.route('login');
+  this.route('viewwalkedstaircases');  
 });
 
 export default Router;
