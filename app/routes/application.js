@@ -14,7 +14,7 @@ export default Ember.Route.extend({
     signOut:function(){
       var controller = this;
       controller.get("session").logout();
-      this.transitionTo('login');
+      this.transitionTo('registerwalkedstaircase');
     }
   }
 
