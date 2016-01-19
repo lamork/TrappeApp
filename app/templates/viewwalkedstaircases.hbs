@@ -8,7 +8,7 @@
   <tbody>
     {{#each session.currentUser.allWalkedStaircasesSortedByDateWalked as |walkedstaircase|}}
         <tr>
-          <td>{{moment-format walkedstaircase.dateWalked 'DD.MM.YYYY' allow-empty=true}}</td>
+          <td>{{moment-format walkedstaircase.dateWalked 'DD.MM.YYYY HH:mm:ss' allow-empty=true}}</td>
           <td><a href="#" {{ action "remove" walkedstaircase }}>Slett</a></td>
         </tr>
     {{/each}}

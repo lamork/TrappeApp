@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
     walkedstaircase.deleteRecord();
     walkedstaircase.save();
 
-    $("#status span").text("Oppføringen er slettet")
+    $("#status span").text("Din trappetur slettet")
     .show().parent().fadeIn()
     .delay(1000).fadeOut('slow', function() {
       $("#registerStatus span").text('');

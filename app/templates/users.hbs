@@ -1,6 +1,18 @@
-{{#each model as |user|}}
-  <li>{{user.id}}</li>
-  <li>{{user.name}}</li>
-  <li>{{user.provider}}</li>
-  <li>{{user.created}}</li>  
-{{/each}}
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Opprettet</th>
+      <th>Navn</th>
+      <th>Id</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |user|}}
+        <tr>
+          <td>{{moment-format user.created 'DD.MM.YYYY hh:mm:ss' allow-empty=true}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.id}}</td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -16,7 +16,7 @@ export default Ember.Controller.extend({
 
       newWalkedstaircase.save().then(function() {
         user.save();
-        $("#status span").text("Trappen er registrert")
+        $("#status span").text("Din trappetur er registrert")
         .show().parent().fadeIn()
         .delay(1000).fadeOut('slow', function() {
           $("#registerStatus span").text('');
