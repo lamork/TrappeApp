@@ -1,18 +1,12 @@
-<script>
-$(".dropdown-menu li a").click(function(){
-  var selText = $(this).text();
-  $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
-});
-</script>
-
-{{#bs-dropdown class="leaderboardFilterButton"}}
-  {{#bs-dropdown-button class="leaderboardFilterButton"}}--- Velg ---{{/bs-dropdown-button}}
-  {{#bs-dropdown-menu}}
-    <li>{{#link-to 'leaderboard' (query-params searchtype="currentWeek")}}Denne uken{{/link-to}}</li>
-    <li>{{#link-to 'leaderboard' (query-params searchtype="currentMonth")}}Denne måneden{{/link-to}}</li>
-    <li>{{#link-to 'leaderboard' (query-params searchtype="currentYear")}}Dette året{{/link-to}}</li>
-  {{/bs-dropdown-menu}}
-{{/bs-dropdown}}
+  {{#link-to 'leaderboard' (query-params searchtype="currentWeek")}}
+    <button type="button" class="btn btn-default leaderboardfilter">Denne uken</button>
+  {{/link-to}}
+  {{#link-to 'leaderboard' (query-params searchtype="currentMonth")}}
+    <button type="button" class="btn btn-default leaderboardfilter">Denne måneden</button>
+  {{/link-to}}
+  {{#link-to 'leaderboard' (query-params searchtype="currentYear")}}
+    <button type="button" class="btn btn-default leaderboardfilter">Dette året</button>
+  {{/link-to}}
 
 <table class="table table-striped table-bordered table-condensed leaderboardTable">
   <thead>
