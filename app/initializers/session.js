@@ -17,7 +17,7 @@ var session = Ember.Object.extend({
         }).catch(() => {
           let newUser = store.createRecord('user', extractUserProperties(authData));
           newUser.save();
-          console.log(newUser, " is created and authenticated");
+          console.log(newUser.id, " is created and authenticated");
           session.set("currentUser", newUser);
         });
         session.set("isAuthenticated", true);
